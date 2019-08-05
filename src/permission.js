@@ -30,10 +30,6 @@ router.beforeEach(async (to, from, next) => {
     // dynamically add accessible routes
     router.addRoutes([
       ...accessRoutes,
-      // {
-      //   path: '*',
-      //   redirect: '/404'
-      // }
     ])
     if (menus && menus.length !== 0) {
       // hack method to ensure that addRoutes is complete

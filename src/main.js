@@ -23,14 +23,6 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-Vue.prototype.$_has = function (val) {
-  const hasPermission = store.state.btns.some(role => {
-    return val.includes(role)
-  })
-  return hasPermission
-}
-
-
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
