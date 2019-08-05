@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || '项目管理' // page title
+const name = defaultSettings.title || '新项目' // page title
 
 const port = process.env.port || process.env.npm_config_port || 9528 // dev port
 
@@ -24,51 +24,9 @@ module.exports = {
       errors: true
     },
     proxy: {
-      [process.env.VUE_APP_PROJECT_INFO]: {
-        // target: `http://192.168.5.207:8002`,
-        // target: `http://192.168.5.234:8002`,
+      [process.env.VUE_APP_BASE_API]: {
         target: `http://192.168.5.234:8002`,
         changeOrigin: true
-      },
-      [process.env.VUE_APP_PROJECT_PROGRESS]: {
-        // target: `http://192.168.5.234:8086`,
-        target: `http://192.168.5.234:8086`,
-        // target: `http://192.168.5.207:8086`,
-        changeOrigin: true
-      },
-      '/project-statistical-analysis-server': {
-        // target: `http://192.168.5.234:8071`,
-        target: `http://192.168.5.234:8071`,
-        // target: `http://192.168.5.207:8071`,
-        changeOrigin: true
-      },
-      [process.env.VUE_APP_PROJECT_MESSAGE]: {
-        // target: `http://192.168.5.234:8006`,
-        target: `http://192.168.5.234:8006`,
-        // target: `http://192.168.5.207:8006`,
-        changeOrigin: true
-      },
-      '^/api': {
-        // target: `http://192.168.5.234:8081`,
-        target: `http://192.168.5.234:8081`,
-        // target: `http://192.168.5.207:8081`,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      },
-      [process.env.VUE_APP_PROJECT_MICROAPP]: {
-        // target: `http://192.168.5.234:8088`,
-        target: `http://192.168.5.234:8088`,
-        changeOrigin: true
-      },
-      '^/file-server': {
-        // target: `http://192.168.5.234:8001/file-server`,
-        target: `http://192.168.5.234:8001/file-server`,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/file-server': ''
-        }
       }
     }
   },

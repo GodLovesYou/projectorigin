@@ -10,37 +10,34 @@ export const constantRoutes = [
 
 export const asyncRoutes = [
   {
-    path: '/projectMessage',
+    path: '/',
     component: Layout,
-    redirect: '/projectMessage/index',
+    redirect: '/index',
     children: [{
       path: 'index',
-      name: 'ProjectMessage',
-      component: () => import('@/views/projectMessage'),
+      name: 'menuA',
+      component: () => import('@/views/menuA'),
       meta: { title: '导航1', icon: 'project-message' }
-    }],
-    meta: {
-      menuName: 'projectMessage'
-    }
+    }]
   },
   {
-    path: '/progressManage',
+    path: '/menuB',
     component: Layout,
-    redirect: '/progressManage/milestoneManage',
-    name: 'ProgressManage',
-    meta: { title: '导航2', icon: 'progress-manage', menuName: 'progressManage' },
+    redirect: '/menuB/optionA',
+    name: 'menuB',
+    meta: { title: '导航2', icon: 'progress-manage'},
     children: [
       {
-        path: 'milestoneManage',
-        name: 'ProgressManage.milestoneManage',
-        component: () => import('@/views/progressManage/milestoneManage'),
-        meta: { title: '选项1', icon: 'milestone', menuName: 'milestoneManage' },
+        path: 'optionA',
+        name: 'menuB.optionA',
+        component: () => import('@/views/menuB/optionA'),
+        meta: { title: '选项1', icon: 'milestone'},
       },
       {
-        path: 'projectProgressManage',
-        name: 'ProgressManage.ProjectProgressManage',
-        component: () => import('@/views/progressManage/projectProgressManage'),
-        meta: { title: '选项2', icon: 'project-progress-manage', menuName: 'projectProgressManage' },
+        path: 'optionB',
+        name: 'menuB.optionB',
+        component: () => import('@/views/menuB/optionB'),
+        meta: { title: '选项2', icon: 'project-progress-manage'},
       }
     ]
   },
@@ -53,8 +50,6 @@ export const asyncRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
-
   linkActiveClass: 'link-active',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
@@ -62,7 +57,6 @@ const createRouter = () => new Router({
 
 const router = createRouter()
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router

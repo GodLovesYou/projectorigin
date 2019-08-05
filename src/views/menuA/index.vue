@@ -1,5 +1,5 @@
 <template>
-  <div>选项2</div>
+  <div>导航1</div>
 </template>
 <script>
 import "./style.scss";
@@ -14,7 +14,6 @@ export default {
 
   },
   components: {
-    page
   },
   created() {
 

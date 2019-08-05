@@ -20,7 +20,7 @@ export default {
     };
   },
   created() {
-    this.getUser()
+    // this.getUser()
   },
   methods: {
     clearCookie() {

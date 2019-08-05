@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '项目管理工具',
+  title: '新项目',
 
   /**
    * @type {boolean} true | false
