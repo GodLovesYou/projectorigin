@@ -1,0 +1,65 @@
+$inputBorderColor:#2f9891;
+.el-button--primary{
+    background-color: $inputBorderColor;
+    border-color: $inputBorderColor;
+}
+.el-button--primary:focus, .el-button--primary:hover {
+    background-color: $inputBorderColor;
+    border-color: $inputBorderColor;
+}
+.el-input__inner:focus{
+    border-color: $inputBorderColor;
+}
+.el-select .el-input__inner:focus {
+    border-color: $inputBorderColor;
+}
+.el-select .el-input.is-focus .el-input__inner {
+    border-color: $inputBorderColor;
+}
+.el-range-editor.is-active, .el-range-editor.is-active:hover {
+    border-color: $inputBorderColor;
+}
+.el-button--text{
+    color: $inputBorderColor;
+}
+.el-button--text, .el-button--text:focus, .el-button--text:hover {
+    color: $inputBorderColor;
+}
+.el-checkbox__input.is-checked .el-checkbox__inner{
+    color: $inputBorderColor !important;
+    background-color: $inputBorderColor !important;
+    border-color: $inputBorderColor !important;
+}
+.el-checkbox__inner:hover {
+    border-color: $inputBorderColor !important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: $inputBorderColor;
+    color: #FFF;
+}
+.el-date-table td.available:hover {
+    color: $inputBorderColor;
+}
+.el-date-table td.today span {
+    color: $inputBorderColor;
+    font-weight: 700;
+}
+.el-date-table td.start-date span {
+    background-color: $inputBorderColor;
+}
+.el-date-table td.end-date span, .el-date-table td.start-date span {
+    background-color: $inputBorderColor;
+}
+.el-date-table td.current:not(.disabled) span {
+    color: #FFF;
+    background-color: $inputBorderColor;
+}
+.el-checkbox__input.is-checked+.el-checkbox__label {
+    color: $inputBorderColor;
+}
+.el-tabs__item.is-active {
+    color: $inputBorderColor;
+}
+.el-tabs__item:hover {
+    color: $inputBorderColor;
+}

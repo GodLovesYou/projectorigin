@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-form@4.2.2/dist/jquery.form.min.js"></script>
+</head>
+<body>
+  <input type="file" id="file" name="file" multiple="multiple">
+  <input type="button" id='btn' value="上传" />
+  <script>
+    $(function () {
+      $('#btn').click(function () {
+        var fileList = $('#file')[0].files
+        var fileListLength = fileList.length
+        if (fileListLength > 0) {
+          for (var i = 0, len = fileList.length; i < len; i++) {
+            let formData = new FormData();
+            formData.append('file', fileList[i]);
+            $.ajax({
+              url: 'http://127.0.0.1:8080',
+              type: 'post',
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function (res, statusText, headers) {
+                if (res.data.success) {
+                  alert('成功');
+                } else {
+                  alert('失败');
+                  console.log(res);
+                }
+              }
+            })
+          }
+        } else {
+          alert("请选择文件！")
+        }
+      })
+    })
+
+
+  </script>
+</body>
+
+</html>
