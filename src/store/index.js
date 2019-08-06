@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { findDictionaryByParentValue } from '@/api/app'
-import { getMenu } from '@/api/app'
 import { asyncRoutes, constantRoutes } from '@/router'
 Vue.use(Vuex)
 
@@ -27,7 +25,7 @@ const mutations = {
 const actions = {
   getMenuInfo({commit}) {
     return new Promise((resolve, reject) => {
-      const menus = [{id: 1, typeId: '0', conent: 'menuA'},{id: 2, typeId: '0', conent: 'menuA'}]
+      const menus = [{id: 1, typeId: '0', conent: 'menuA'},{id: 2, typeId: '0', conent: 'menuB'}]
       setTimeout(() => {
         commit('SET_MENUS', menus)
         resolve(menus)
