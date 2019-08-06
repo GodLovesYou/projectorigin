@@ -233,6 +233,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  .test{
+    overflow: hidden;
+  }
   .head{
     padding: 10px;
   }
